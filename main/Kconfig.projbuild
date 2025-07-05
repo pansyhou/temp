@@ -1,0 +1,19 @@
+menu "Esp32_temp_sensor"
+
+    config MQTT_BROKER_URI
+        string "MQTT broker URI"
+        default "mqtt://192.168.1.13:1883"
+
+    config MQTT_USERNAME
+        string "MQTT username"
+        default "admin"
+
+    config MQTT_PASSWORD
+        string "MQTT password"
+        default "" # 将默认密码设置为空
+        help
+            MQTT 代理的连接密码。
+            出于安全考虑，请不要在此文件中设置默认密码。
+            请在 menuconfig 中输入您的实际密码。
+
+endmenu
