@@ -6,6 +6,7 @@
 #include <freertos/task.h>
 #include <esp_timer.h>
 #include <bsp/bsp_sht3x.h>
+
 #include <string>
 #include <mutex>
 #include <list>
@@ -14,6 +15,7 @@
 #include <memory>
 
 #include <mqtt_protocol.h>
+#include <ir_kelon.h>
 
 class Application {
 public:
@@ -37,6 +39,7 @@ private:
     void mqtt_reg();
     sht3x *sht3x_;
     MqttClient *mqttclient_;
+    IRKelonAc *kelon_ac_;
     // std::unique_ptr<WakeWord> wake_word_;
     // std::unique_ptr<AudioProcessor> audio_processor_;
     // Ota ota_;
